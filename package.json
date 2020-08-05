@@ -65,7 +65,7 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
+  "devDependencies42fa31c4dc730f3577d1d778bb6bf743": {
     "browser-sync": "^2.26.12",
     "dependency-cruiser": "^9.9.2",
     "eslint-config-prettier": "^6.11.0",

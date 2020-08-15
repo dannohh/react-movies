@@ -1,6 +1,7 @@
 import React from 'react'
 import { Nav } from './Nav'
 import { SearchBar } from './SearchBar'
+import { MovieList } from './MovieList'
 
 export class MovieSearch extends React.Component {
   constructor() {
@@ -32,7 +33,7 @@ render() {
     <div>
       <Nav />
       <SearchBar handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
-
+      <MovieList movies={this.state.movies}/>
     </div>
   )
 }

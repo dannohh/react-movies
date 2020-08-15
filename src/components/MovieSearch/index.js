@@ -1,25 +1,40 @@
-import React, {useState} from 'react'
+import React from 'react'
+import { Nav } from './Nav'
+import { SearchBar } from './SearchBar'
 
-import {Cards} from './Cards'
-import {Form as Search} from  "./Form"
+export class MovieSearch extends React.Component {
+  constructor() {
+    super()
+      this.state = {
+        searchTerm: '',
+        movies: [],
+      }
+      this.apiKey = process.env.REACT_APP_API_KEY
+  }
 
-//import api from 'api'
+  handleSubmit = (e) => {
+    e.preventDefault()
+    fetch(`https://api.themoviedb.org/3/search/movie?api_key=${this.apiKey}&query=${this.state.searchTerm}`).then(data => data.json()).then(data =>
+    {
+      console.log(data)
+      this.setState({
+        movies: [...data.results]
+      })
+    })
+  }
 
-export const MovieSearch = () => {
+  handleChange = (e) => {
+    this.setState({searchTerm: e.target.value})
+  }
 
+render() {
+  return(
+    <div>
+      <Nav />
+      <SearchBar handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
 
-// const [movies, setMovies] = setState([])
+    </div>
+  )
+}
 
-/// TODO: Send a handler to 'Search so that we can 'setMovies' when there is a submission
-
-// useEffect(() => {
-//   ; (async () => {
-//     console.log(await api.index('Star Wars'))
-//   })()
-// })
-
-return <main>
-    <Cards />
-    <Search />
-  </main>
 }

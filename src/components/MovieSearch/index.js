@@ -9,6 +9,7 @@ export class MovieSearch extends React.Component {
       this.state = {
         searchTerm: '',
         movies: [],
+
       }
       this.apiKey = process.env.REACT_APP_API_KEY
   }

@@ -7,7 +7,7 @@ export const SearchBar = (props) => {
         <section className="">
           <form onSubmit={props.handleSubmit}>
             <div>
-              <input type="text" onChange={props.handleChange} placeholder="Find your movies here!"></input>
+              <input type="text" className="input mb-3" onChange={props.handleChange} placeholder="Find your movies here!"></input>
             </div>
           </form>
         </section>

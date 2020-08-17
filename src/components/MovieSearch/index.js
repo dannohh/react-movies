@@ -25,6 +25,7 @@ export class MovieSearch extends React.Component {
     })
   }
 
+
   handleChange = (e) => {
     this.setState({searchTerm: e.target.value})
   }
@@ -34,7 +35,7 @@ render() {
     <div>
       <Nav />
       <SearchBar handleChange={this.handleChange} handleSubmit={this.handleSubmit}/>
-      <MovieList movies={this.state.movies}/>
+      <MovieList movies={this.state.movies} />
     </div>
   )
 }

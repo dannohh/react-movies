@@ -3,12 +3,14 @@ import React from 'react'
 export const Movie = (props) => {
   return (
     <div className="column">
-      <div className="card has-background-danger-dark">
+      <div className="card has-background-danger-dark has-text-black">
 
         {
             props.image === null ? <img src="https://s3-ap-southeast-1.amazonaws.com/upcode/static/default-image.jpg" alt="card" /> : <img src={`http://image.tmdb.org/t/p/w185${props.image}` }alt="none" />
         }
-
+        <div className="row">
+        {props.text}
+        </div>
       </div>
 
       <div>
